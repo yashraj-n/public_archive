@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="cat.png">
+    <meta name="favicon" href="cat.png">    <title>Yashraj Blogs</title>
+    
+    <link rel="stylesheet" href="bootstrap.css">
+    
+    <style type="text/css">
+        .post-title {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .author-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin-bottom: 25px;
+        }
+        
+        .comment-form {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .comment-item {
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default" style="background-color: #343a40; border: none;">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand" style="color: white;">Yashraj's Blog</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#" style="color: #ccc;">Home</a></li>
+                <li><a href="#" style="color: #ccc;">About</a></li>
+                <li><a href="#" style="color: #ccc;">Posts</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" style="color: #ccc;">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="post-title">Running Hadoop in Docker: A Seamless Single-Node Setup</h1>
+            
+            <div class="author-info">
+                <h4>Author Information</h4>
+                <p><strong>Name:</strong> Yashraj Narke</p>
+                <p><strong>Published:</strong> January 15, 2025</p>
+                <p><strong>Reading Time:</strong> 6 minutes</p>
+                <p style="margin-bottom: 0;"><strong>Category:</strong> Big Data & DevOps</p>
+            </div>
+            
+            <div class="post-content">
+                <p>Setting up Hadoop can be a complex and time-consuming process, especially for development and testing purposes. That's why I created a Docker solution that makes running a complete Hadoop cluster as simple as executing a single command. Let me walk you through this streamlined approach to getting Hadoop up and running.</p>
+                
+                <h4>What's Included in This Setup?</h4>
+                <p>My Hadoop Docker image provides a complete single-node cluster running Hadoop 3.3.6 with Java OpenJDK 11. It automatically starts all essential services:</p>
+                <ul>
+                    <li><strong>HDFS Components:</strong> NameNode, DataNode, and SecondaryNameNode</li>
+                    <li><strong>YARN Components:</strong> ResourceManager and NodeManager</li>
+                    <li><strong>Web UIs:</strong> Accessible interfaces for monitoring and management</li>
+                </ul>
+                
+                <h4>One-Command Setup</h4>
+                <p>The beauty of this solution lies in its simplicity. After installing Docker, you just need to create a shared folder and run a single command. For example, on Windows:</p>
+                <pre style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+mkdir C:\Hadoop\shared
+docker run -d \
+  -p 9000:9000 -p 9870:9870 -p 8088:8088 -p 8042:8042 -p 19888:19888 \
+  -v C:\Hadoop\shared:/shared \
+  --name hadoop-container \
+  yashrajn/hadoop</pre>
+                
+                <h4>Accessible Web Interfaces</h4>
+                <p>Once running, you get access to several web UIs that make monitoring and managing your Hadoop cluster intuitive:</p>
+                <ul>
+                    <li><strong>NameNode UI (port 9870):</strong> Monitor HDFS health and browse the filesystem</li>
+                    <li><strong>YARN ResourceManager UI (port 8088):</strong> Track running applications and cluster resources</li>
+                    <li><strong>NodeManager UI (port 8042):</strong> View individual node statistics</li>
+                    <li><strong>JobHistory UI (port 19888):</strong> Analyze completed MapReduce jobs</li>
+                </ul>
+                
+                <h4>Working with HDFS</h4>
+                <p>The container comes pre-configured with HDFS accessible at <code>hdfs://localhost:9000</code>. The shared folder mounted at <code>/shared</code> makes it easy to transfer files between your host system and HDFS. You can quickly upload files and start working with distributed storage without complex configuration.</p>
+                
+                <h4>Why This Matters</h4>
+                <p>This Docker approach eliminates the traditional pain points of Hadoop setup - no more wrestling with Java versions, configuration files, or service dependencies. Whether you're learning Hadoop, developing applications, or need a quick testing environment, this solution gets you productive in minutes rather than hours.</p>
+                
+                <p>The project is open source and available on <a href="https://github.com/yashraj-n/hadoop-docker" target="_blank">GitHub</a>, with the Docker image hosted on Docker Hub for easy access. It's designed to be a zero-hassle solution for anyone who needs Hadoop running quickly and reliably.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Comments</h3>
+                
+                <div class="comment-item">
+                    <h5>Ashish Sharma</h5>
+                    <p>wow nice</p>
+                    <small class="text-muted">Posted 3 hours ago</small>
+                </div>
+                
+                <div class="comment-item">
+                    <h5>Sushant Kumar</h5>
+                    <p>how to use github </p>
+                    <small class="text-muted">Posted 1 day ago</small>
+                </div>
+                
+                <div class="comment-item">
+                    <h5>Dhiraj Rajput</h5>
+                    <p>me likey</p>
+                    <small class="text-muted">Posted 2 days ago</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="comment-form">
+                    <h4>Leave a Comment</h4>
+                    <form>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" id="commentName" placeholder="Enter your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" id="commentEmail" placeholder="Enter your email">
+                            <small class="form-text text-muted">Email is Private</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Comment</label>
+                            <textarea class="form-control" id="commentMessage" rows="4" placeholder="Write your comment here..."></textarea>
+                        </div>
+                        
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                               I agree to the terms and conditions
+                            </label>
+                        </div>
+                        
+                        <button class="btn btn-primary">Submit Comment</button>
+                        <button class="btn btn-secondary">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 50px; padding: 20px 0; background-color: #f8f9fa; text-align: center;">
+        <div class="container">
+            <p>&copy; 2025 Yashraj Narke's Blog. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
