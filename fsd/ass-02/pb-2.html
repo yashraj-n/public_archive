@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>real</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Problem Statement 2</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3>Vanilla JavaScript DOM Operations</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h5>1. getElementById Demo</h5>
+                            <p id="demo-text">This text will be changed!</p>
+                            <button class="btn btn-primary" onclick="changeTextById()">Change Text by ID</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>2. getElementsByTagName Demo</h5>
+                            <p class="tag-demo">First paragraph</p>
+                            <p class="tag-demo">Second paragraph</p>
+                            <p class="tag-demo">Third paragraph</p>
+                            <button class="btn btn-success" onclick="changeTextByTag()">Change All Paragraphs</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>3. getElementsByClassName Demo</h5>
+                            <div class="class-demo">Element 1</div>
+                            <div class="class-demo">Element 2</div>
+                            <div class="class-demo">Element 3</div>
+                            <button class="btn btn-info" onclick="changeTextByClass()">Change Class Elements</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>4. CSS Properties Demo</h5>
+                            <div id="css-demo" class="p-3 border">This box will change color and position!</div>
+                            <button class="btn btn-warning" onclick="changeCSS()">Change CSS Properties</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>5. Image Source Change</h5>
+                            <img id="demo-image" src="https://picsum.photos/200/150?random=1" alt="Demo Image" class="img-fluid">
+                            <br><br>
+                            <button class="btn btn-secondary" onclick="changeImage()">Change Image</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>6. Add Text Node</h5>
+                            <div id="parent-node" class="border p-3">
+                                <p>Existing content</p>
+                            </div>
+                            <button class="btn btn-dark" onclick="addTextNode()">Add Text Node</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>7. Delete Node</h5>
+                            <div id="delete-container">
+                                <p>This node will remain</p>
+                            </div>
+                            <button class="btn btn-danger" onclick="deleteNode()">Delete Added Text Node</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3>jQuery Operations</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h5>1. Change Button Text</h5>
+                            <button id="jquery-btn" class="btn btn-primary">Original Text</button>
+                            <button class="btn btn-success" onclick="changeButtonText()">Change Button Text</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>2. Set Background Image</h5>
+                            <div id="bg-demo" class="p-4 border" style="height: 150px;">
+                                This div will get a background image
+                            </div>
+                            <button class="btn btn-info" onclick="setBackgroundImage()">Set Background Image</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>3. Access Form Data</h5>
+                            <form id="demo-form">
+                                <div class="mb-2">
+                                    <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                                </div>
+                                <div class="mb-2">
+                                    <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                                </div>
+                                <button type="button" class="btn btn-warning" onclick="accessFormData()">Get Form Data</button>
+                            </form>
+                            <div id="form-result" class="mt-2"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>4. Add Attribute</h5>
+                            <div id="attr-demo" class="p-3 border">This element will get new attributes</div>
+                            <button class="btn btn-secondary" onclick="addAttribute()">Add Attributes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script-pb2.js"></script>
+</body>
+</html>
