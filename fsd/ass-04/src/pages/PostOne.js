@@ -5,7 +5,7 @@ function PostOne() {
   return (
     <article style={{ maxWidth: 800, margin: '40px auto', padding: '0 16px' }}>
       <header>
-        <h1>Getting Started with Web Development</h1>
+        <h1>Getting Started with Web dev</h1>
         <p style={{ color: '#666' }}>By Yashraj narke • November 2025 • 5 min read</p>
       </header>
       <section>

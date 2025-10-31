@@ -5,7 +5,7 @@ function PostTwo() {
   return (
     <article style={{ maxWidth: 800, margin: '40px auto', padding: '0 16px' }}>
       <header>
-        <h1>Understanding React Components</h1>
+        <h1>React Components</h1>
         <p style={{ color: '#666' }}>by Yashraj Narke • October 2025 • 6 min read</p>
       </header>
       <section>

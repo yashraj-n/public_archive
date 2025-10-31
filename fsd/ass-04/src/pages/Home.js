@@ -9,15 +9,15 @@ function Home() {
       <ul style={{ listStyle: 'none', padding: 0, marginTop: 24 }}>
         <li style={{ marginBottom: 16 }}>
           <h2 style={{ margin: '0 0 8px' }}>
-            <Link to="/post-1">Getting Started with Web Development</Link>
+            <Link to="/post-1">Getting Started with Web dev</Link>
           </h2>
-          <p style={{ margin: 0 }}>A beginner-friendly guide to the web stack and how the pieces fit.</p>
+          <p style={{ margin: 0 }}>learn React and express</p>
         </li>
         <li>
           <h2 style={{ margin: '0 0 8px' }}>
-            <Link to="/post-2">Understanding React Components</Link>
+            <Link to="/post-2">React Components</Link>
           </h2>
-          <p style={{ margin: 0 }}>Learn what components are, why they matter, and how to compose them.</p>
+          <p style={{ margin: 0 }}>Functional and class components</p>
         </li>
       </ul>
     </main>
