@@ -1,5 +1,8 @@
 import React from 'react';
-import ProductGallery from './components/ProductGallery';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import './App.css';
 
 function App() {
@@ -8,7 +11,12 @@ function App() {
       <header className="App-header">
         <h1>Yashraj's Product Gallery</h1>
       </header>
-      <ProductGallery />
+      <ErrorBoundary>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+        </Routes>
+      </ErrorBoundary>
     </div>
   );
 }

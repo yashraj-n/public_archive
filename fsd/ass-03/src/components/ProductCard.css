@@ -13,7 +13,7 @@
 }
 
 .product-card:hover {
-  transform: translateY(-50px);
+  transform: translateY(-10px);
 }
 
 .product-image {
@@ -57,4 +57,10 @@
 
 .add-to-cart-button:hover {
   background-color: #218838;
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    margin: 10px 0;
+  }
 }
